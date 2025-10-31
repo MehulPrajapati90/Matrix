@@ -18,6 +18,12 @@ export const addUser = mutation({
             throw new Error("Not Authenticated!");
         }
 
+        const orgId = identify.orgId as string;
+
+        if (!orgId) {
+            throw new Error("Missing organization");
+        }
+
         const userId = await ctx.db.insert("users", {
             name: "Suraj"
         })
