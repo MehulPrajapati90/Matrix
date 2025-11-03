@@ -17,7 +17,7 @@ export default function Page() {
           <OrganizationSwitcher hidePersonal />
           <Button size="sm" onClick={() => addUser()}>Button</Button>
           {user?.map((user) => (
-            <div>
+            <div key={user._id}>
               {user.name}
             </div>
           ))}
